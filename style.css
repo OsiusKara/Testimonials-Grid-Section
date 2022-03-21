@@ -1,11 +1,3 @@
-/* .attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-} */
-
 /* Global ------------------------------------------------> */
 
 *,
@@ -46,7 +38,7 @@ body {
 }
 
 .main-wrapper {
-  max-width: 70%;
+  width: 1000px;
   display: grid;
   gap: 2.5rem;
   grid-template-columns: repeat(4, 1fr);
@@ -84,7 +76,6 @@ body {
 .testimonial header {
   margin: 1.8rem 0 1.8rem 0;
   line-height: 2.5rem;
-  /* font-size: 1.5rem; */
 }
 
 .paragraph-opacity {
@@ -145,4 +136,80 @@ body {
   color: var(--very-dark-grayish-blue);
 }
 
+.attribution {
+  min-width: 220px;
+  font-size: 1.2rem;
+  color: rgb(97, 96, 96);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
 /* Media Queries------------------------------------------------------------------------------------------------> */
+
+/* Tablet Version----------> */
+
+body {
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+@media screen and (max-width: 950px) {
+  .main-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3;
+    grid-template-areas:
+      "one two"
+      "three four"
+      "fivee five";
+  }
+
+  .daniel {
+    grid-area: one;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .kira {
+    grid-area: two;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .jeanette {
+    grid-area: three;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .patrick {
+    grid-area: four;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .jonathan {
+    grid-area: five;
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+}
+
+/* Mobile Version-----------------------------------> */
+
+@media screen and (max-width: 600px) {
+  .main-wrapper {
+    display: block;
+    max-width: 375px;
+  }
+
+  .testimonial {
+    margin: 2rem 0 2rem 0;
+  }
+
+  .attribution {
+    text-align: center;
+  }
+}
